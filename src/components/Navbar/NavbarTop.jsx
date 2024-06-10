@@ -1,12 +1,14 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './NavbarTop.css';
+import CartButton from '../CartButton/CartButton';
 
-function NavbarTop() {
+function NavbarTop({ showMenu, count }) {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" fixed="top">
-      <Container >
+      <Container>
         <Navbar.Brand href="#home" className='UpperTaste'>BOOKSHELF.IN</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

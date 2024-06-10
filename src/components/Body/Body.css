@@ -1,17 +1,23 @@
-.cardContainer{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    background-color: rgb(255, 255, 255);
-    width:28rem;
-    padding: 1rem;
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 28rem;
+  padding: 1rem;
 }
 
 .truncate-text {
-    overflow: hidden;
-    display: -webkit-box; /* For older browsers */
-    -webkit-line-clamp: 3; /* Limit to two lines */
-    -webkit-box-orient: vertical; /* Set orientation to vertical */
-    white-space: normal; /* Allow wrapping within box */
-    width: 200px;
-  }
+  overflow: hidden;
+  display: -webkit-box; /* For older browsers */
+  -webkit-line-clamp: 3; /* Limit to two lines */
+  -webkit-box-orient: vertical; /* Set orientation to vertical */
+  white-space: normal; /* Allow wrapping within box */
+  width: 200px;
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
