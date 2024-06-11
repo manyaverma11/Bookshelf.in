@@ -51,14 +51,8 @@ function Body() {
 
     return (
       <div className="cardContainer col-lg-3 col-md-6 mb-4">
-        <Card
-          style={{
-            width: "20rem",
-            height: "20rem",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
+        <Card style={{ width: "20rem", height: "20rem" }}>
+          <div style={{display:'flex', justifyContent:'center'}}>
           <Card.Img
             variant="top"
             src={imageLinks?.thumbnail}
@@ -69,40 +63,33 @@ function Body() {
               width: "10rem",
             }}
           />
-          <Card.Body
-            style={{
-              height: "20rem",
-              margin: "0",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <Card.Title
-              style={{ fontSize: "large", margin: "0" }}
-              className="truncate-text"
-            >
+          </div>
+          <Card.Body style={{ display: "flex", flexDirection: "column" }}>
+            <Card.Title style={{ fontSize: "large", marginBottom: "0" }} className="truncate-text">
               {title}
             </Card.Title>
-            <Card.Text style={{ fontSize: "small", margin: "0" }}>
-              <p style={{ fontSize: "small", margin: "0" }}>
+            <Card.Text style={{ fontSize: "small", marginTop: "auto" }}>
+              <p style={{ margin: "0" }} className="truncate-text-author">
                 By {authors ? authors.join(", ") : "Unknown Author"}
               </p>
-              <p style={{ fontSize: "small", margin: "0" }}>
-                Price: ${pageCount / 10}
+              <p style={{ margin: "0" }}>
+                Price: ${(pageCount / 10).toFixed(2)}
               </p>
             </Card.Text>
-            <Button
-              style={{
-                fontSize: "small",
-                margin: "0",
-                justifyContent: "flex-end",
-              }}
-              className="cartButton"
-              onClick={() => setCount(count + 1)}
-            >
-              Add to Cart
-            </Button>
+            <div style={{ marginTop: "auto", textAlign: "center" }}>
+              {/* Center the button horizontally */}
+              <Button
+                style={{
+                  fontSize: "small",
+                  marginRight: "auto",
+                  marginLeft: "auto",
+                }}
+                className="cartButton"
+                onClick={() => setCount(count + 1)}
+              >
+                Add to Cart
+              </Button>
+            </div>
           </Card.Body>
         </Card>
       </div>

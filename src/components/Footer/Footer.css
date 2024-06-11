@@ -1,0 +1,32 @@
+.footer{
+    background-color: black;
+    margin: 0%;
+    padding: 0%;
+    margin-top: 30px;
+}
+
+.copyright{
+    margin: 0;
+    padding: 0;
+    color: #000000A6;
+    text-decoration: none;
+}
+
+.copyright:hover{
+    color: rgb(0, 0, 0);
+    transition: 0.9s;
+}
+
+.socialIcons{
+    margin-left: 20px;
+}
+
+.socialIcons a{
+    color: #000000A6;
+    margin-right: 10px;
+}
+
+.socialIcons a:hover{
+    color: #000000;
+    margin-right: 10px;
+}
