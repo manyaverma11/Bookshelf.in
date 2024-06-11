@@ -15,7 +15,7 @@ function Body() {
   const fetchBooks = async () => {
     try {
       const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=science%20fiction&startIndex=${startIndex}&maxResults=${maxResults}`
+        `https://www.googleapis.com/books/v1/volumes?q=search+terms&startIndex=${startIndex}&maxResults=${maxResults}`
       );
       const data = await response.json();
       if (startIndex === 0) {
@@ -52,20 +52,23 @@ function Body() {
     return (
       <div className="cardContainer col-lg-3 col-md-6 mb-4">
         <Card style={{ width: "20rem", height: "20rem" }}>
-          <div style={{display:'flex', justifyContent:'center'}}>
-          <Card.Img
-            variant="top"
-            src={imageLinks?.thumbnail}
-            alt={title}
-            style={{
-              height: "10rem",
-              padding: "1rem 1rem 0 1rem",
-              width: "10rem",
-            }}
-          />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Card.Img
+              variant="top"
+              src={imageLinks?.thumbnail}
+              alt={title}
+              style={{
+                height: "10rem",
+                padding: "1rem 1rem 0 1rem",
+                width: "10rem",
+              }}
+            />
           </div>
           <Card.Body style={{ display: "flex", flexDirection: "column" }}>
-            <Card.Title style={{ fontSize: "large", marginBottom: "0" }} className="truncate-text">
+            <Card.Title
+              style={{ fontSize: "large", marginBottom: "0" }}
+              className="truncate-text"
+            >
               {title}
             </Card.Title>
             <Card.Text style={{ fontSize: "small", marginTop: "auto" }}>
