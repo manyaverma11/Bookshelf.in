@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <NavbarTop />
-      <div style={{ paddingTop: "80px" }}>
+      <div style={{ paddingTop: "0px" }}>
         <Body />
         <Footer />
       </div>
