@@ -9,7 +9,7 @@ import { MdEmail } from "react-icons/md";
 const Footer = () => {
   return (
     <div className="footer">
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary" id='contact'>
         <Container>
           <Navbar.Brand style={{ display: "flex" }}>
             Contact |

@@ -1,5 +1,119 @@
+/* General Styles */
 .carousel-item img {
-  height:100vh;
-  object-fit: cover; /* This will make sure the image covers the whole area */
-  
+  height: 100vh;
+  object-fit: cover; /* Ensure the image covers the entire area */
+}
+
+div.show.dropdown {
+  color: white;
+  border: 0;
+}
+
+#dropdown-basic-button {
+  color: white;
+}
+
+/* Dropdown Styles */
+.dropdown-item {
+  background-color: white;
+}
+
+/* Change dropdown button active and focus color */
+.dropdown-toggle:active,
+.dropdown-toggle:focus,
+.dropdown-toggle.show {
+  color: white !important;
+  background-color: silver !important;
+  border-color: silver !important;
+  box-shadow: none;
+}
+
+/* Ensure the dropdown button is visible */
+.dropdown-toggle {
+  color: white !important;
+  background-color: silver !important;
+  border: 1px solid silver;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+/* Override dropdown item hover color */
+.dropdown-item:hover {
+  color: white;
+  background-color: darkgray;
+}
+
+/* About Section Styles */
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.button-col {
+  margin-top: 10px; /* Add margin for better spacing on smaller screens */
+}
+
+.input-col2{
+  display: none;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 665px) {
+
+  .input-col1{
+    display: none;
+  }
+
+  .input-col2{
+    display: flex;
+  }
+
+  .searchBar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .searchBar .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+
+  .searchBar .btn,
+  .searchBar .dropdown {
+    width: auto;
+    margin: 5px 0;
+  }
+
+  /* Center the placeholder text horizontally and vertically */
+  .center-placeholder::placeholder {
+    text-align: center; /* Center horizontally */
+  }
+
+  .center-placeholder {
+    text-align: center; /* Center horizontally */
+    display: flex;
+    align-items: center; /* Center vertically */
+  }
+
+  .button-col {
+    flex: 1;
+    width: 100%;
+    margin-bottom: 10px; /* Add space between elements */
+  }
+
+  .search-input,
+  .search-button,
+  .cart-button,
+  .custom-dropdown {
+    width: 100%;
+  }
 }

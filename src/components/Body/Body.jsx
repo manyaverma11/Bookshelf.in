@@ -82,12 +82,15 @@ function Body() {
             <div style={{ marginTop: "auto", textAlign: "center" }}>
               {/* Center the button horizontally */}
               <Button
+                variant="default"
                 style={{
                   fontSize: "small",
                   marginRight: "auto",
                   marginLeft: "auto",
+                  backgroundColor:'silver',
+                  color:'white'
                 }}
-                className="cartButton"
+                className="button-38"
                 onClick={() => setCount(count + 1)}
               >
                 Add to Cart
@@ -114,6 +117,8 @@ function Body() {
           className="loadMoreButton"
           type="button"
           onClick={handleLoadMore}
+          variant="default"
+          style={{ color: "white", background: "silver" }}
         >
           Load more
         </Button>

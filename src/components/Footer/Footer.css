@@ -29,4 +29,5 @@
 .socialIcons a:hover{
     color: #000000;
     margin-right: 10px;
+    transition: 0.9s;
 }

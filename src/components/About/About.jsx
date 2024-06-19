@@ -12,7 +12,7 @@ const About = ({ showMenu, count }) => {
   return (
     <div>
       <div>
-        <Carousel>
+        <Carousel id='home'>
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -58,33 +58,43 @@ const About = ({ showMenu, count }) => {
       </div>
       <div
         className="searchBar"
-        style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
+        style={{ display: "flex", justifyContent: "center", marginTop: "30px", marginBottom:'30px'}}
       >
         <Form inline>
           <Row>
-            <Col xs="auto" style={{ width: "50vw" }}>
+            <Col xs="auto" className="input-col1" style={{ width: "50vw" }}>
               <Form.Control
                 type="text"
                 placeholder="Enter the name of the book!"
-                className="mr-sm-2"
+                className="mr-sm-2 form-control"
+              />
+            </Col>
+            <Col xs="auto" className="input-col2" style={{ width: "82vw" }}>
+              <Form.Control
+                type="text"
+                placeholder="Enter the name of the book!"
+                className="mr-sm-2 form-control"
               />
             </Col>
             <Col xs="auto">
-              <Button type="submit">Search</Button>
+              <Button type="submit" variant="default"
+    style={{ color: "white", background: "silver" }}>Search</Button>
             </Col>
             <Col xs="auto">
-              <DropdownButton id="dropdown-basic-button" title="Filters">
+              <Button className="myCart" onClick={showMenu} variant="default"
+    style={{ color: "white", background: "silver" }}>
+                My Cart ({count})
+              </Button>
+            </Col>
+            <Col xs="auto">
+              <DropdownButton id="dropdown-basic-button" title="Filters" variant='default'
+    style={{ color: "white", background: "silver" }}>
                 <Dropdown.Item href="#/action-1">Bestselling</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Price: Low to High</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Price: High to Low</Dropdown.Item>
                 <Dropdown.Item href="#/action-4">Publication Date (Latest)</Dropdown.Item>
-                <Dropdown.Item href="#/action-4">Publication Date (Oldest)</Dropdown.Item>
+                <Dropdown.Item href="#/action-5">Publication Date (Oldest)</Dropdown.Item>
               </DropdownButton>
-            </Col>
-            <Col xs="auto">
-              <Button className="myCart" onClick={showMenu}>
-                My Cart ({count})
-              </Button>
             </Col>
           </Row>
         </Form>

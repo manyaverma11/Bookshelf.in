@@ -1,0 +1,17 @@
+// src/assets/scss/custom.scss
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+// Custom styles
+.dropdown-item {
+  &:hover, &:active, &.active {
+    background-color: silver !important;
+    color: white !important; // Adjust text color if needed
+  }
+}
+
+.btn-default {
+  color: white;
+  background: silver;
+  border: none; // Ensure the button has no border
+  border-radius: 4px; // Ensure the button is rounded
+}
