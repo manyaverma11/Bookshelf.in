@@ -87,7 +87,7 @@ function Body() {
                   fontSize: "small",
                   marginRight: "auto",
                   marginLeft: "auto",
-                  backgroundColor:'silver',
+                  backgroundColor:'#81d1d4',
                   color:'white'
                 }}
                 className="button-38"
@@ -118,7 +118,7 @@ function Body() {
           type="button"
           onClick={handleLoadMore}
           variant="default"
-          style={{ color: "white", background: "silver" }}
+          style={{ color: "white", background: "#81d1d4" }}
         >
           Load more
         </Button>

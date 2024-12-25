@@ -78,17 +78,17 @@ const About = ({ showMenu, count }) => {
             </Col>
             <Col xs="auto">
               <Button type="submit" variant="default"
-    style={{ color: "white", background: "silver" }}>Search</Button>
+    style={{ color: "white", background: "#81d1d4" }}>Search</Button>
             </Col>
             <Col xs="auto">
               <Button className="myCart" onClick={showMenu} variant="default"
-    style={{ color: "white", background: "silver" }}>
+    style={{ color: "white", background: "#81d1d4" }}>
                 My Cart ({count})
               </Button>
             </Col>
             <Col xs="auto">
               <DropdownButton id="dropdown-basic-button" title="Filters" variant='default'
-    style={{ color: "white", background: "silver" }}>
+    style={{ color: "white", background: "#81d1d4" }}>
                 <Dropdown.Item href="#/action-1">Bestselling</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Price: Low to High</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">Price: High to Low</Dropdown.Item>
