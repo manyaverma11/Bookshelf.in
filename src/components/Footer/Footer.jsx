@@ -29,7 +29,7 @@ const Footer = () => {
             href="https://manyaverma11.github.io/Portfolio/"
             className="copyright"
           >
-            Built by Manya Verma | Copyrights ©2024.
+            Built by Manya Verma | Copyrights ©2025.
           </a>
         </Container>
       </Navbar>

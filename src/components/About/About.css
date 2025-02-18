@@ -23,7 +23,7 @@ div.show.dropdown {
 .dropdown-toggle:focus,
 .dropdown-toggle.show {
   color: white !important;
-  background-color: #81d1d4 !important;
+  background-color: #ffffff !important;
   border-color: "#81d1d4" !important;
   box-shadow: none;
 }
@@ -31,7 +31,7 @@ div.show.dropdown {
 /* Ensure the dropdown button is visible */
 .dropdown-toggle {
   color: white !important;
-  background-color: "#81d1d4" !important;
+  background-color: "#b8dcdd" !important;
   border: 1px solid "#81d1d4";
   border-radius: 4px;
   padding: 6px 12px;

@@ -7,12 +7,52 @@ import Carousel from "react-bootstrap/Carousel";
 import "../About/About.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import { useState, useEffect } from "react";
+import Products from "../Products/Products";
 
 const About = ({ showMenu, count }) => {
+  const [query, setQuery] = useState("");
+  const [books, setBooks] = useState([]);
+
+  const searchBooks = async () => {
+
+    if (!query.trim()) {
+      if(books){
+        setBooks([]);
+      }
+      console.error("Search query is empty!");
+      return;
+    }
+
+    console.log("Fetching books for:", query); 
+
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${query}`
+      );
+
+      const data = await response.json();
+
+      if (data.items) {
+        setBooks(data.items);
+      } else {
+        setBooks([]);
+        console.warn("No books found.");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Stops form from refreshing page
+    searchBooks();
+  };
+
   return (
     <div>
       <div>
-        <Carousel id='home'>
+        <Carousel id="home">
           <Carousel.Item>
             <img
               className="d-block w-100"
@@ -58,47 +98,78 @@ const About = ({ showMenu, count }) => {
       </div>
       <div
         className="searchBar"
-        style={{ display: "flex", justifyContent: "center", marginTop: "30px", marginBottom:'30px'}}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "30px",
+          marginBottom: "30px",
+        }}
       >
-        <Form inline>
+        <Form inline={true} onSubmit={handleSubmit}>
           <Row>
             <Col xs="auto" className="input-col1" style={{ width: "50vw" }}>
               <Form.Control
                 type="text"
                 placeholder="Enter the name of the book!"
                 className="mr-sm-2 form-control"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
               />
             </Col>
-            <Col xs="auto" className="input-col2" style={{ width: "82vw" }}>
-              <Form.Control
-                type="text"
-                placeholder="Enter the name of the book!"
-                className="mr-sm-2 form-control"
-              />
-            </Col>
+
             <Col xs="auto">
-              <Button type="submit" variant="default"
-    style={{ color: "white", background: "#81d1d4" }}>Search</Button>
+              <Button
+                type="submit"
+                variant="default"
+                style={{ color: "white", background: "#81d1d4" }}
+                onClick={searchBooks}
+              >
+                Search
+              </Button>
             </Col>
+
             <Col xs="auto">
-              <Button className="myCart" onClick={showMenu} variant="default"
-    style={{ color: "white", background: "#81d1d4" }}>
+              <Button
+                className="myCart"
+                onClick={showMenu}
+                variant="default"
+                style={{ color: "white", background: "#81d1d4" }}
+              >
                 My Cart ({count})
               </Button>
             </Col>
             <Col xs="auto">
-              <DropdownButton id="dropdown-basic-button" title="Filters" variant='default'
-    style={{ color: "white", background: "#81d1d4" }}>
+              <DropdownButton
+                id="dropdown-basic-button"
+                title="Filters"
+                variant="default"
+                style={{ color: "white", background: "#81d1d4" }}
+              >
                 <Dropdown.Item href="#/action-1">Bestselling</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Price: Low to High</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Price: High to Low</Dropdown.Item>
-                <Dropdown.Item href="#/action-4">Publication Date (Latest)</Dropdown.Item>
-                <Dropdown.Item href="#/action-5">Publication Date (Oldest)</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">
+                  Price: Low to High
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">
+                  Price: High to Low
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-4">
+                  Publication Date (Latest)
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-5">
+                  Publication Date (Oldest)
+                </Dropdown.Item>
               </DropdownButton>
             </Col>
           </Row>
         </Form>
       </div>
+      <main style={{ margin: "0 1rem" }}>
+        <div className="row">
+          {books.map((book, index) => (
+            <Products key={index} book={book} />
+          ))}
+        </div>
+      </main>
     </div>
   );
 };
