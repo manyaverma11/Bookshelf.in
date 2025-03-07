@@ -121,7 +121,7 @@ const About = ({ showMenu, count }) => {
               <Button
                 type="submit"
                 variant="default"
-                style={{ color: "white", background: "#81d1d4" }}
+                style={{ color: "black", background: "white", border: "1px solid black" }}
                 onClick={searchBooks}
               >
                 Search
@@ -133,7 +133,7 @@ const About = ({ showMenu, count }) => {
                 className="myCart"
                 onClick={showMenu}
                 variant="default"
-                style={{ color: "white", background: "#81d1d4" }}
+                style={{ color: "black", background: "white", border: "1px solid black" }}
               >
                 My Cart ({count})
               </Button>
@@ -143,8 +143,7 @@ const About = ({ showMenu, count }) => {
                 id="dropdown-basic-button"
                 title="Filters"
                 variant="default"
-                style={{ color: "white", background: "#81d1d4" }}
-              >
+                style={{ color: "white", background: "black" }}              >
                 <Dropdown.Item href="#/action-1">Bestselling</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">
                   Price: Low to High

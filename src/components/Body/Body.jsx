@@ -16,9 +16,14 @@ function Body() {
   const fetchBooks = async () => {
     try {
       const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q&orderBy=relevance&startIndex=${startIndex}&maxResults=${maxResults}`
+        `https://www.googleapis.com/books/v1/volumes?q=search+terms&startIndex=${startIndex}&maxResults=${maxResults}`
       );
       const data = await response.json();
+
+      if (!data.items) {
+            console.warn("No books found.");
+            return; // Stop execution if no books
+        }
       if (startIndex === 0) {
         setBooks(data.items);
       } else {
@@ -63,7 +68,7 @@ function Body() {
           type="button"
           onClick={handleLoadMore}
           variant="default"
-          style={{ color: "white", background: "#81d1d4" }}
+          style={{ color: "black", background: "white", border: "1px solid black" }}
         >
           Load more
         </Button>

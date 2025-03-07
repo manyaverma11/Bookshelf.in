@@ -2,8 +2,10 @@ import "./App.css";
 import NavbarTop from "./components/Navbar/NavbarTop.jsx";
 import Body from "./components/Body/Body.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import BookRecommender from "./components/BookRecommender/BookRecommender";
 
-function App() {
+function HomePage() {
   return (
     <div>
       <NavbarTop />
@@ -12,6 +14,17 @@ function App() {
         <Footer />
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/recommend" element={<BookRecommender />} />
+      </Routes>
+    </Router>
   );
 }
 
